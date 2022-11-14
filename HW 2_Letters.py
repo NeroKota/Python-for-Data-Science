@@ -72,6 +72,6 @@ Letters_test = np.array([
     1,0,1,1,
     0,1,1,1,],])
 
-for x in Letters:
+for x in Letters_test:
     print(x, f0(x), f1(x)) #соответствие/несоответствие
     
