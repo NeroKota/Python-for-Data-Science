@@ -11,7 +11,7 @@ for i in range(len(D[0])):
     D[:,i] = D[:,i] * a[0] + a[1]
 clasification = MLPClassifier(
     solver='lbfgs', 
-    hidden_layer_sizes=(200), 
+    hidden_layer_sizes=(160), 
     random_state=1,
     max_iter=100, 
     warm_start=True
@@ -20,4 +20,5 @@ clasification.fit(D, Y0)
 Year = clasification.predict(D)
 for i in range(len(Y0)):
  print(f'Год издания книги = {Y0[i]}, Год, который получился = {Year[i]}')
- #на удивление, даже достаточно точно
+ #на удивление, даже достаточно точно, однако при изменении hidden_layer_sizes меняются совпадающие года, 
+ #так у меня обучение особенно ненавидит 2007 и 2013 года, постоянно заменяя их иными значениями
